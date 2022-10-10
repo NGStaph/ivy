@@ -13935,27 +13935,27 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]]))</span>
+<span class="sd">    &gt;&gt;&gt; ivy.Container.get_num_dims(x)</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 2</span>
 <span class="sd">    }</span>
-<span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.Container.get_num_dims(x)</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 3</span>
 <span class="sd">    }</span>
-<span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]]]),\</span>
 <span class="sd">                                        c = ivy.asarray([[0.,1.,1.],[8.,2.,3.]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.Container.get_num_dims(x)</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 3,</span>
 <span class="sd">        c: 2</span>
 <span class="sd">    }</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a, as_array=True)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.Container.get_num_dims(x, as_array=True)</span>
 <span class="sd">    {</span>
 <span class="sd">        b: ivy.array(3),</span>
 <span class="sd">        c: ivy.array(2)</span>
@@ -14002,27 +14002,29 @@
 <span class="sd">    ret</span>
 <span class="sd">        Shape of the array</span>
 
-<span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.asarray([[0.,1.,1.],[1.,0.,0.],[8.,2.,3.]])) </span>
+<span class="sd">    &gt;&gt;&gt; a.get_num_dims()</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 2</span>
 <span class="sd">    }</span>
 <span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    &gt;&gt;&gt; a.get_num_dims()</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 3</span>
 <span class="sd">    }</span>
 <span class="sd">    &gt;&gt;&gt; a = ivy.Container(b = ivy.array([[[0,0,0],[0,0,0],[0,0,0]],\</span>
 <span class="sd">                                        [[0,0,0],[0,0,0],[0,0,0]]]),\</span>
 <span class="sd">                                        c = ivy.asarray([[0.,1.,1.],[8.,2.,3.]]))</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a)</span>
+<span class="sd">    &gt;&gt;&gt; a.get_num_dims()</span>
 <span class="sd">    {</span>
 <span class="sd">        b: 3,</span>
 <span class="sd">        c: 2</span>
 <span class="sd">    }</span>
-<span class="sd">    &gt;&gt;&gt; ivy.get_num_dims(a, as_array=True)</span>
+<span class="sd">    &gt;&gt;&gt; a.get_num_dims(as_array=True)</span>
 <span class="sd">    {</span>
 <span class="sd">        b: ivy.array(3),</span>
 <span class="sd">        c: ivy.array(2)</span>
